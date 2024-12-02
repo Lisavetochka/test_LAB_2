@@ -1,1 +1,3 @@
-New text! Its branch2!!
+
+Edited text for branch1
+
