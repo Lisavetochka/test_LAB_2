@@ -18,7 +18,7 @@ df = pd.DataFrame(data)
 
 # Модель множинної регресії
 X = df[["X1", "X2", "X3"]]
-X = sm.add_constant(X)  # Додаємо константу
+X = sm.add_constant(X) 
 Y = df["Y"]
 
 # Перевірка мультиколінеарності за допомогою VIF
@@ -29,9 +29,6 @@ vif_data["VIF"] = [variance_inflation_factor(X.values, i) for i in range(X.shape
 # Вивести VIF
 print("VIF для кожної змінної:")
 print(vif_data)
-
-# Якщо VIF значення більше 10, варто розглянути вилучення змінної з високою мультиколінеарністю.
-# Після аналізу VIF можна вилучити змінну з високим VIF (якщо таке є).
 
 # Створення моделі множинної регресії
 model = sm.OLS(Y, X).fit()
